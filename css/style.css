@@ -1,0 +1,22 @@
+img{
+    width: 50%;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.personajesMarvel{
+    display: grid ;
+    grid-template-columns: auto auto auto auto;
+}
+
+.personajesMarvel > div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.cuerpoPaginaSecundaria > div{
+    margin-bottom: 3%;
+}
