@@ -64,9 +64,7 @@ function consumirAPI() {
 function  seriesMarvel(){
 
     
-    var apikey = "d8b02dc109d7a677a61793797397e470";
-    var ts = "1000";
-    var hash = "15aa89127ec7f5cc41b3362aa8c68a9b";
+   
 
     const paramURL = window.location.search;
 
@@ -74,8 +72,7 @@ function  seriesMarvel(){
 
     const Direccion = parametrosURL.get('Direccion');
 
-    var url = Direccion +'?ts=' + ts +"&apikey=" + apikey + "&hash=" + hash;
-
+    var url =  convertirHTTPS(Direccion)
 
 
 
@@ -137,9 +134,7 @@ function  seriesMarvel(){
 function  comicsMarvel(){
 
     
-    var apikey = "d8b02dc109d7a677a61793797397e470";
-    var ts = "1000";
-    var hash = "15aa89127ec7f5cc41b3362aa8c68a9b";
+   
 
     const paramURL = window.location.search;
 
@@ -147,7 +142,7 @@ function  comicsMarvel(){
 
     const Direccion = parametrosURL.get('Direccion');
 
-    var url = Direccion +'?ts=' + ts +"&apikey=" + apikey + "&hash=" + hash;
+    var url = convertirHTTPS(Direccion)
 
 
 
@@ -209,18 +204,14 @@ function  comicsMarvel(){
 function  EventosMarvel(){
 
     
-    var apikey = "d8b02dc109d7a677a61793797397e470";
-    var ts = "1000";
-    var hash = "15aa89127ec7f5cc41b3362aa8c68a9b";
-
+   
     const paramURL = window.location.search;
 
     const parametrosURL = new URLSearchParams(paramURL);
 
     const Direccion = parametrosURL.get('Direccion');
 
-    var url = Direccion +'?ts=' + ts +"&apikey=" + apikey + "&hash=" + hash;
-
+    var url = convertirHTTPS(Direccion)
 
 
 
@@ -274,5 +265,17 @@ function  EventosMarvel(){
 
 
    
+
+}
+
+function convertirHTTPS(urlInsegura){
+
+    var apikey = "d8b02dc109d7a677a61793797397e470";
+    var ts = "1000";
+    var hash = "15aa89127ec7f5cc41b3362aa8c68a9b";
+
+
+    var https ="https://" + urlInsegura.substring(7, urlInsegura.length) + '?ts=' + ts +"&apikey=" + apikey + "&hash=" + hash;
+    return https
 
 }
